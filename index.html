@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎂 Happy Birthday Chawani 🎂</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Quicksand:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      background: radial-gradient(ellipse at 50% 30%, #2a1b3d 0%, #1a1325 70%, #0d0812 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Quicksand', sans-serif;
+      padding: 1.5rem;
+      position: relative;
+      overflow-x: hidden;
+      color: #f0e6d5;
+    }
+
+    /* ===== TWINKLING STARS ===== */
+    .stars {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .star {
+      position: absolute;
+      background-color: #fff9e6;
+      border-radius: 50%;
+      opacity: 0.7;
+      animation: twinkle 4s infinite alternate ease-in-out;
+    }
+    @keyframes twinkle {
+      0% { opacity: 0.15; transform: scale(0.7); }
+      100% { opacity: 1; transform: scale(1.3); }
+    }
+
+    /* ===== FLOATING BALLOONS ===== */
+    .balloon {
+      position: fixed;
+      bottom: -150px;
+      width: 55px;
+      height: 70px;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      opacity: 0.65;
+      pointer-events: none;
+      z-index: 1;
+      animation: floatUp linear infinite;
+    }
+    .balloon::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 14px;
+      background: rgba(255,255,255,0.4);
+    }
+    .balloon::before {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 10px;
+      background: inherit;
+      border-radius: 50%;
+      box-shadow: inset -3px -3px 5px rgba(0,0,0,0.15);
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(0) rotate(-5deg); opacity: 0.65; }
+      50% { transform: translateY(-50vh) rotate(5deg); opacity: 0.85; }
+      100% { transform: translateY(-110vh) rotate(-5deg); opacity: 0; }
+    }
+
+    /* ===== FLOATING HEARTS ===== */
+    .heart-float {
+      position: fixed;
+      bottom: -50px;
+      font-size: 1.8rem;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.5;
+      animation: heartRise linear infinite;
+    }
+    @keyframes heartRise {
+      0% { transform: translateY(0) scale(0.8) rotate(0deg); opacity: 0.5; }
+      50% { opacity: 0.8; }
+      100% { transform: translateY(-110vh) scale(1.1) rotate(15deg); opacity: 0; }
+    }
+
+    /* ===== MAIN CARD ===== */
+    .card {
+      position: relative;
+      z-index: 10;
+      background: rgba(30, 20, 45, 0.55);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 48px;
+      padding: 3rem 2.5rem 2.5rem;
+      max-width: 900px;
+      width: 100%;
+      box-shadow:
+        0 40px 80px rgba(0, 0, 0, 0.7),
+        0 0 0 1px rgba(255, 215, 0, 0.25) inset,
+        0 0 60px rgba(255, 180, 50, 0.12);
+      border: 1px solid rgba(255, 220, 150, 0.2);
+      text-align: center;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      animation: cardGlow 6s ease-in-out infinite alternate;
+    }
+    @keyframes cardGlow {
+      0% { box-shadow: 0 40px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,215,0,0.25) inset, 0 0 60px rgba(255,180,50,0.12); }
+      100% { box-shadow: 0 40px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,215,0,0.35) inset, 0 0 90px rgba(255,200,80,0.25); }
+    }
+    .card:hover {
+      transform: scale(1.012);
+    }
+
+    /* ============================================================
+       ATTRACTIVE TEXT EFFECT — HAPPY BIRTHDAY CHAWANI
+       ============================================================ */
+    .title-block {
+      position: relative;
+      margin-bottom: 0.5rem;
+    }
+
+    .happy-text {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3.2rem;
+      font-weight: 700;
+      color: transparent;
+      background: linear-gradient(135deg, #ffe9b6 0%, #ffb347 25%, #ff8c00 50%, #ffb347 75%, #ffe9b6 100%);
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: none;
+      letter-spacing: 3px;
+      line-height: 1.1;
+      animation: gradientShift 4s ease-in-out infinite;
+      position: relative;
+      display: inline-block;
+      filter: drop-shadow(0 0 20px rgba(255, 180, 50, 0.6));
+    }
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .chawani-text {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 4.5rem;
+      font-weight: 700;
+      color: #ffd966;
+      text-shadow:
+        0 0 10px #ffaa33,
+        0 0 20px #ff8800,
+        0 0 40px #ff5500,
+        0 0 80px #ff3300,
+        0 0 120px #ff2200;
+      letter-spacing: 4px;
+      display: block;
+      line-height: 1.1;
+      position: relative;
+      animation: chawaniPulse 2.5s ease-in-out infinite;
+    }
+    @keyframes chawaniPulse {
+      0%, 100% {
+        text-shadow:
+          0 0 10px #ffaa33,
+          0 0 20px #ff8800,
+          0 0 40px #ff5500,
+          0 0 80px #ff3300,
+          0 0 120px #ff2200;
+        transform: scale(1);
+      }
+      50% {
+        text-shadow:
+          0 0 15px #ffcc66,
+          0 0 30px #ffaa33,
+          0 0 60px #ff8800,
+          0 0 100px #ff5500,
+          0 0 150px #ff3300;
+        transform: scale(1.03);
+      }
+    }
+
+    /* Shimmering underline */
+    .title-underline {
+      width: 0;
+      height: 3px;
+      margin: 0.5rem auto 0.8rem;
+      background: linear-gradient(90deg, transparent, #ffd966, #ff8c00, #ffd966, transparent);
+      border-radius: 3px;
+      animation: underlineExpand 2s ease-in-out infinite alternate;
+    }
+    @keyframes underlineExpand {
+      0% { width: 40%; opacity: 0.5; }
+      100% { width: 80%; opacity: 1; }
+    }
+
+    /* Floating sparkles around the name */
+    .sparkle {
+      position: absolute;
+      font-size: 1.2rem;
+      pointer-events: none;
+      opacity: 0;
+      animation: sparkleFloat 3s ease-in-out infinite;
+    }
+    @keyframes sparkleFloat {
+      0% { opacity: 0; transform: translateY(0) scale(0.5); }
+      30% { opacity: 1; }
+      70% { opacity: 1; }
+      100% { opacity: 0; transform: translateY(-30px) scale(1.2); }
+    }
+
+    /* ===== DIVIDER ===== */
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin: 0.6rem 0 1.2rem;
+    }
+    .divider span {
+      height: 1px;
+      width: 60px;
+      background: linear-gradient(90deg, transparent, #cfb27c, transparent);
+    }
+    .divider .diamond {
+      width: 8px;
+      height: 8px;
+      background: #ffd966;
+      transform: rotate(45deg);
+      box-shadow: 0 0 12px #ffb347;
+      border-radius: 1px;
+    }
+
+    .sub-heading {
+      font-size: 0.95rem;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: #decba4;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ===== A4 PORTRAIT IMAGE SLIDESHOW ===== */
+    .slideshow-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 380px;
+      margin: 1.5rem auto 1.2rem;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.85),
+        0 0 0 3px rgba(255, 215, 0, 0.35),
+        0 0 40px rgba(255, 180, 50, 0.35);
+      aspect-ratio: 210 / 297;
+      background: #0d0812;
+    }
+    .slideshow-wrapper::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      padding: 3px;
+      background: linear-gradient(135deg, #ffd966, #ff8c00, #ffd966, #ffaa33);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      z-index: 20;
+      pointer-events: none;
+      animation: borderGlow 4s linear infinite;
+    }
+    @keyframes borderGlow {
+      0% { filter: hue-rotate(0deg); }
+      100% { filter: hue-rotate(20deg); }
+    }
+    .slide {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transform: scale(1.08);
+      transition: opacity 1.2s ease-in-out, transform 1.2s ease-in-out;
+      z-index: 1;
+    }
+    .slide.active {
+      opacity: 1;
+      transform: scale(1);
+      z-index: 2;
+    }
+
+    /* Slideshow dots */
+    .dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+    }
+    .dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: rgba(255, 215, 150, 0.25);
+      border: 1px solid rgba(255, 215, 150, 0.4);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .dot.active {
+      background: #ffd966;
+      box-shadow: 0 0 12px #ffb347, 0 0 20px #ff8c00;
+      transform: scale(1.2);
+    }
+
+    /* ===== MUSIC CONTROL ===== */
+    .music-control {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      margin: 0.5rem auto 1.2rem;
+      padding: 0.6rem 1.2rem;
+      width: fit-content;
+      background: rgba(10, 5, 20, 0.6);
+      border-radius: 40px;
+      border: 1px solid rgba(255, 200, 100, 0.3);
+      box-shadow: 0 8px 20px -5px rgba(0,0,0,0.8), 0 0 15px rgba(255,180,50,0.15);
+      backdrop-filter: blur(6px);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      user-select: none;
+    }
+    .music-control:hover {
+      background: rgba(30, 18, 45, 0.8);
+      box-shadow: 0 12px 25px -5px rgba(0,0,0,0.9), 0 0 25px rgba(255,200,80,0.3);
+      transform: translateY(-2px);
+    }
+    .music-control:active {
+      transform: scale(0.97);
+    }
+    .music-icon {
+      font-size: 1.4rem;
+      line-height: 1;
+      filter: drop-shadow(0 0 6px #ffb347);
+    }
+    .music-label {
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #decba4;
+      font-weight: 600;
+    }
+    .music-control.playing .music-label {
+      color: #ffd966;
+    }
+    .music-control.playing .music-icon {
+      animation: musicPulse 1s ease-in-out infinite;
+    }
+    @keyframes musicPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.25); }
+    }
+
+    /* ===== 5-SECOND REVEAL COUNTDOWN ===== */
+    .reveal-countdown {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+    .reveal-countdown.visible {
+      display: flex;
+    }
+    .reveal-number {
+      font-family: 'Dancing Script', cursive;
+      font-size: 7rem;
+      font-weight: 700;
+      color: #ffe9b6;
+      text-shadow:
+        0 0 30px #ffb347,
+        0 0 60px #ff8c00,
+        0 0 100px #ff6600,
+        0 0 150px #ff3300;
+      line-height: 1;
+      animation: revealPulse 1s ease-in-out infinite;
+    }
+    @keyframes revealPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+    .reveal-text {
+      font-size: 1.1rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #decba4;
+      margin-top: 0.8rem;
+      font-weight: 400;
+    }
+
+    /* ===== CELEBRATION MESSAGE ===== */
+    .celebration-message {
+      display: none;
+      font-family: 'Dancing Script', cursive;
+      font-size: 3rem;
+      font-weight: 700;
+      color: #fff3c9;
+      text-shadow:
+        0 0 20px #ffaa33,
+        0 0 40px #ff6600,
+        0 0 70px #ff3300;
+      margin: 1.5rem 0 0.8rem;
+      animation: glowPulse 1.8s infinite alternate;
+      line-height: 1.3;
+    }
+    @keyframes glowPulse {
+      0% { text-shadow: 0 0 15px #ffb347, 0 0 30px #ff8c00; transform: scale(1); }
+      100% { text-shadow: 0 0 35px #ffdd88, 0 0 70px #ffaa00; transform: scale(1.03); }
+    }
+
+    /* ===== BIRTHDAY WISH ===== */
+    .birthday-wish {
+      font-size: 1.25rem;
+      color: #f0e6d5;
+      margin: 1.5rem auto 1rem;
+      line-height: 1.8;
+      font-weight: 300;
+      font-style: italic;
+      padding: 0 0.5rem;
+      max-width: 620px;
+    }
+    .birthday-wish .highlight {
+      font-weight: 600;
+      color: #ffd966;
+      font-style: normal;
+      text-shadow: 0 0 10px rgba(255,180,50,0.5);
+    }
+    .signature {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.6rem;
+      color: #decba4;
+      margin-top: 0.6rem;
+      opacity: 0.9;
+    }
+
+    /* ===== EMOJI ROW ===== */
+    .emoji-row {
+      font-size: 2.8rem;
+      margin: 0.6rem 0 0.3rem;
+      letter-spacing: 8px;
+      filter: drop-shadow(0 0 15px #ffaa33);
+      animation: float 3s infinite ease-in-out;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 650px) {
+      .card { padding: 2rem 1.2rem 1.8rem; border-radius: 36px; }
+      .happy-text { font-size: 2.4rem; }
+      .chawani-text { font-size: 3.2rem; }
+      .birthday-wish { font-size: 1.05rem; }
+      .celebration-message { font-size: 2.1rem; }
+      .sub-heading { font-size: 0.75rem; letter-spacing: 4px; }
+      .signature { font-size: 1.3rem; }
+      .emoji-row { font-size: 2.2rem; letter-spacing: 6px; }
+      .balloon { width: 40px; height: 52px; }
+      .reveal-number { font-size: 5rem; }
+      .slideshow-wrapper { max-width: 300px; }
+    }
+    @media (max-width: 420px) {
+      .happy-text { font-size: 2rem; }
+      .chawani-text { font-size: 2.6rem; }
+      .reveal-number { font-size: 4rem; }
+      .slideshow-wrapper { max-width: 260px; }
+    }
+
+    /* ===== CONFETTI ===== */
+    .confetti-piece {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      pointer-events: none;
+      z-index: 100;
+      border-radius: 2px;
+      will-change: transform, top, opacity;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Stars Background -->
+  <div class="stars" id="stars"></div>
+
+  <!-- Hidden audio element for birthday song -->
+  <audio id="birthdayAudio" src="cjn1.mp3" loop preload="auto"></audio>
+
+  <!-- MAIN CARD -->
+  <main class="card">
+    <div class="pre-title">🎉 A Celebration of You 🎉</div>
+
+    <!-- ATTRACTIVE TEXT EFFECT -->
+    <div class="title-block">
+      <div class="happy-text">Happy Birthday</div>
+      <div class="chawani-text">Chawani</div>
+      <div class="title-underline"></div>
+    </div>
+
+    <div class="divider">
+      <span></span>
+      <div class="diamond"></div>
+      <span></span>
+    </div>
+
+    <div class="sub-heading">✨ a star was born ✨</div>
+
+    <!-- A4 PORTRAIT IMAGE SLIDESHOW -->
+    <div class="slideshow-wrapper" id="slideshow">
+      <img src="cj1.jpg" alt="Janitha Chawani" class="slide active" id="slide1">
+      <img src="cj2.jpg" alt="Janitha Chawani" class="slide" id="slide2">
+      <img src="cj3.jpg" alt="Janitha Chawani" class="slide" id="slide3">
+      <img src="cj4.jpg" alt="Janitha Chawani" class="slide" id="slide4">
+    </div>
+    <div class="dots" id="dots">
+      <div class="dot active" data-index="0"></div>
+      <div class="dot" data-index="1"></div>
+      <div class="dot" data-index="2"></div>
+      <div class="dot" data-index="3"></div>
+    </div>
+
+    <!-- MUSIC CONTROL -->
+    <div class="music-control" id="musicControl" role="button" tabindex="0" aria-label="Toggle birthday song">
+      <span class="music-icon" id="musicIcon">🔇</span>
+      <span class="music-label" id="musicLabel">Play Birthday Song</span>
+    </div>
+
+    <!-- 5-SECOND REVEAL COUNTDOWN -->
+    <div class="reveal-countdown" id="revealCountdown">
+      <div class="reveal-number" id="revealNumber">5</div>
+      <div class="reveal-text">Get Ready...</div>
+    </div>
+
+    <!-- CELEBRATION MESSAGE (visible after countdown) -->
+    <div id="celebrationMessage" class="celebration-message">
+      🎂 It's Your Special Day! 🎂
+    </div>
+
+    <!-- BIRTHDAY WISH -->
+    <div class="birthday-wish">
+      <span class="highlight">Wishing you a day filled with love, laughter, and cake!</span><br>
+      May all your dreams come true, Janitha. You deserve the world and more. 💖
+    </div>
+
+    <div class="emoji-row">🎂🎈🎁🥳</div>
+    <div class="signature">— With love &amp; light —</div>
+  </main>
+
+  <script>
+    (function() {
+      // ============================================================
+      // CONFIGURATION — SET JANITHA'S BIRTHDAY HERE
+      // ============================================================
+      const BIRTHDAY_MONTH = 11;   // November (11)  ← change if needed
+      const BIRTHDAY_DAY = 16;     // 16th           ← change if needed
+
+      // ============================================================
+      // ELEMENTS
+      // ============================================================
+      const celebrationMessage = document.getElementById('celebrationMessage');
+      const revealCountdown = document.getElementById('revealCountdown');
+      const revealNumber = document.getElementById('revealNumber');
+      const dots = document.querySelectorAll('.dot');
+      const audio = document.getElementById('birthdayAudio');
+      const musicControl = document.getElementById('musicControl');
+      const musicIcon = document.getElementById('musicIcon');
+      const musicLabel = document.getElementById('musicLabel');
+
+      // ============================================================
+      // MUSIC CONTROL
+      // ============================================================
+      let isPlaying = false;
+
+      function setMusicUI(playing) {
+        isPlaying = playing;
+        if (playing) {
+          musicControl.classList.add('playing');
+          musicIcon.textContent = '🔊';
+          musicLabel.textContent = 'Pause Song';
+        } else {
+          musicControl.classList.remove('playing');
+          musicIcon.textContent = '🔇';
+          musicLabel.textContent = 'Play Birthday Song';
+        }
+      }
+
+      function toggleMusic() {
+        if (isPlaying) {
+          audio.pause();
+          setMusicUI(false);
+        } else {
+          const playPromise = audio.play();
+          if (playPromise !== undefined) {
+            playPromise
+              .then(() => setMusicUI(true))
+              .catch(() => {
+                musicLabel.textContent = 'Tap to Play 🎵';
+                setMusicUI(false);
+              });
+          } else {
+            setMusicUI(true);
+          }
+        }
+      }
+
+      musicControl.addEventListener('click', toggleMusic);
+      musicControl.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleMusic();
+        }
+      });
+
+      // ============================================================
+      // IMAGE SLIDESHOW
+      // ============================================================
+      const slides = document.querySelectorAll('.slide');
+      let currentSlide = 0;
+      let slideshowInterval = null;
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === index);
+        });
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === index);
+        });
+        currentSlide = index;
+      }
+
+      function nextSlide() {
+        showSlide((currentSlide + 1) % slides.length);
+      }
+
+      function startSlideshow() {
+        if (slideshowInterval) return;
+        slideshowInterval = setInterval(nextSlide, 3000);
+      }
+
+      dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+          showSlide(i);
+          clearInterval(slideshowInterval);
+          slideshowInterval = setInterval(nextSlide, 3000);
+        });
+      });
+
+      // ============================================================
+      // 5-SECOND REVEAL COUNTDOWN (ALWAYS RUNS ON LOAD)
+      // ============================================================
+      let revealTimer = null;
+      let secondsLeft = 5;
+      let celebrationStarted = false;
+
+      function startRevealCountdown() {
+        if (celebrationStarted) return;
+        celebrationStarted = true;
+
+        revealCountdown.classList.add('visible');
+        celebrationMessage.style.display = 'none';
+        revealNumber.textContent = secondsLeft;
+
+        revealTimer = setInterval(() => {
+          secondsLeft--;
+          if (secondsLeft > 0) {
+            revealNumber.textContent = secondsLeft;
+          } else {
+            clearInterval(revealTimer);
+            revealTimer = null;
+            revealCountdown.classList.remove('visible');
+            celebrationMessage.style.display = 'block';
+            launchConfetti();
+            setInterval(() => launchConfetti(), 5000);
+          }
+        }, 1000);
+      }
+
+      // ============================================================
+      // STARS
+      // ============================================================
+      function createStars() {
+        const container = document.getElementById('stars');
+        const count = 180;
+        for (let i = 0; i < count; i++) {
+          const star = document.createElement('div');
+          star.classList.add('star');
+          const size = Math.random() * 3 + 1;
+          star.style.width = size + 'px';
+          star.style.height = size + 'px';
+          star.style.left = Math.random() * 100 + '%';
+          star.style.top = Math.random() * 100 + '%';
+          star.style.animationDelay = Math.random() * 4 + 's';
+          star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+          if (Math.random() > 0.8) star.style.backgroundColor = '#ffe9b6';
+          container.appendChild(star);
+        }
+      }
+
+      // ============================================================
+      // BALLOONS
+      // ============================================================
+      function createBalloons() {
+        const colors = ['#ff6b6b', '#ffa94d', '#ffd43b', '#69db7c', '#4dabf7', '#da77f2', '#ff8cc8'];
+        const count = 12;
+        for (let i = 0; i < count; i++) {
+          const balloon = document.createElement('div');
+          balloon.classList.add('balloon');
+          const color = colors[Math.floor(Math.random() * colors.length)];
+          balloon.style.background = `radial-gradient(circle at 35% 30%, ${color}, ${shadeColor(color, -40)})`;
+          balloon.style.left = (Math.random() * 90 + 5) + '%';
+          balloon.style.animationDuration = (Math.random() * 14 + 12) + 's';
+          balloon.style.animationDelay = (Math.random() * 20) + 's';
+          balloon.style.width = (Math.random() * 25 + 40) + 'px';
+          balloon.style.height = (Math.random() * 30 + 52) + 'px';
+          document.body.appendChild(balloon);
+        }
+      }
+
+      function shadeColor(hex, percent) {
+        const num = parseInt(hex.replace('#', ''), 16);
+        const amt = Math.round(2.55 * percent);
+        const R = Math.max(0, Math.min(255, (num >> 16) + amt));
+        const G = Math.max(0, Math.min(255, ((num >> 8) & 0x00FF) + amt));
+        const B = Math.max(0, Math.min(255, (num & 0x0000FF) + amt));
+        return '#' + (0x1000000 + R * 0x10000 + G * 0x100 + B).toString(16).slice(1);
+      }
+
+      // ============================================================
+      // FLOATING HEARTS
+      // ============================================================
+      function createHearts() {
+        const hearts = ['❤️', '💖', '💗', '💕', '💘', '💝'];
+        const count = 10;
+        for (let i = 0; i < count; i++) {
+          const heart = document.createElement('div');
+          heart.classList.add('heart-float');
+          heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+          heart.style.left = (Math.random() * 95 + 2) + '%';
+          heart.style.fontSize = (Math.random() * 1.4 + 1.2) + 'rem';
+          heart.style.animationDuration = (Math.random() * 10 + 10) + 's';
+          heart.style.animationDelay = (Math.random() * 15) + 's';
+          document.body.appendChild(heart);
+        }
+      }
+
+      // ============================================================
+      // CONFETTI
+      // ============================================================
+      let confettiActive = false;
+      function launchConfetti() {
+        if (confettiActive) return;
+        confettiActive = true;
+        setTimeout(() => { confettiActive = false; }, 2500);
+
+        const colors = ['#ffd966', '#ffb347', '#ff8c00', '#ffe9b6', '#ffaa33', '#f9c74f', '#f9844a', '#ff6b6b', '#da77f2', '#4dabf7'];
+        const count = 120;
+
+        for (let i = 0; i < count; i++) {
+          const piece = document.createElement('div');
+          piece.classList.add('confetti-piece');
+          piece.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+          piece.style.left = Math.random() * 100 + '%';
+          piece.style.top = '-20px';
+          piece.style.width = (Math.random() * 8 + 5) + 'px';
+          piece.style.height = (Math.random() * 8 + 5) + 'px';
+          piece.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+          piece.style.opacity = Math.random() * 0.5 + 0.5;
+          piece.style.transform = `rotate(${Math.random() * 360}deg)`;
+          piece.style.transition = `transform ${Math.random() * 3 + 2.5}s linear, top ${Math.random() * 3 + 2.5}s linear, opacity 1.5s ease-out`;
+
+          document.body.appendChild(piece);
+
+          requestAnimationFrame(() => {
+            piece.style.top = '105vh';
+            piece.style.transform = `rotate(${Math.random() * 1080}deg)`;
+            piece.style.opacity = '0';
+          });
+
+          setTimeout(() => piece.remove(), 6000);
+        }
+
+        setTimeout(() => {
+          for (let i = 0; i < 80; i++) {
+            const piece = document.createElement('div');
+            piece.classList.add('confetti-piece');
+            piece.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            piece.style.left = Math.random() * 100 + '%';
+            piece.style.top = '-20px';
+            piece.style.width = (Math.random() * 8 + 5) + 'px';
+            piece.style.height = (Math.random() * 8 + 5) + 'px';
+            piece.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+            piece.style.opacity = Math.random() * 0.5 + 0.5;
+            piece.style.transform = `rotate(${Math.random() * 360}deg)`;
+            piece.style.transition = `transform ${Math.random() * 3 + 2.5}s linear, top ${Math.random() * 3 + 2.5}s linear, opacity 1.5s ease-out`;
+            document.body.appendChild(piece);
+            requestAnimationFrame(() => {
+              piece.style.top = '105vh';
+              piece.style.transform = `rotate(${Math.random() * 1080}deg)`;
+              piece.style.opacity = '0';
+            });
+            setTimeout(() => piece.remove(), 6000);
+          }
+        }, 800);
+      }
+
+      // ============================================================
+      // INIT
+      // ============================================================
+      function init() {
+        createStars();
+        createBalloons();
+        createHearts();
+        startSlideshow();
+        // Start the 5-second reveal countdown immediately on load
+        startRevealCountdown();
+      }
+
+      window.addEventListener('load', init);
+    })();
+  </script>
+</body>
+</html>
